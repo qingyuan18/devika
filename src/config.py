@@ -63,6 +63,12 @@ class Config:
     def get_claude_api_key(self):
         return self.config["API_KEYS"]["CLAUDE"]
 
+    def get_bedrock_access_key(self):
+        return self.config["BEDROCK"]["AWS_ACCESS_KEY"]
+
+    def get_bedrock_security_key(self):
+        return self.config["BEDROCK"]["AWS_SECURITY_KEY"]
+
     def get_openai_api_key(self):
         return self.config["API_KEYS"]["OPENAI"]
 

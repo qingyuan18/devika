@@ -30,6 +30,10 @@ class LLM:
         self.log_prompts = config.get_logging_prompts()
         self.timeout_inference = config.get_timeout_inference()
         self.models = {
+           "BedRock-CLAUDE": [
+                ("Claude 3.5 Sonnet", "anthropic.claude-3-5-sonnet-20240620-v1:0"),
+                ("Claude 3 Sonnect", "anthropic.claude-3-sonnet-20240229-v1:0"),
+            ],
             "CLAUDE": [
                 ("Claude 3 Opus", "claude-3-opus-20240229"),
                 ("Claude 3 Sonnet", "claude-3-sonnet-20240229"),
@@ -94,6 +98,7 @@ class LLM:
 
         model_mapping = {
             "OLLAMA": ollama,
+            "BedRock-CLAUDE": BedRock(),
             "CLAUDE": Claude(),
             "OPENAI": OpenAi(),
             "GOOGLE": Gemini(),
